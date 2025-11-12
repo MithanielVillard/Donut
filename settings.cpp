@@ -13,5 +13,7 @@ Settings::Settings(int argc, char ** argv)
 			m_height = std::stoi(argv[i+1]);
 		else if (strcmp(argv[i], "-w") == 0)
 			m_width = std::stoi(argv[i+1]);
+		else if (strcmp(argv[i], "-r") == 0)
+			m_meshResolution = std::stoi(argv[i+1]);
 	}
 }
