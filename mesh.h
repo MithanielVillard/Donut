@@ -3,8 +3,10 @@
 
 #include "settings.h"
 #include <vector>
+
 struct Vertex
 {
+	Vertex() = default;
 	Vertex(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
 
 	float x;
@@ -24,6 +26,8 @@ public:
 	void GenerateHalfCircle(float radius);
 	void GenerateRectangle(float width, float height);
 	void GenereateSquare(float size);
+
+	std::vector<Vertex>& GetVertices() { return m_vertices; }
 
 private:
 	std::vector<Vertex> m_vertices;

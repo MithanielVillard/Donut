@@ -10,11 +10,17 @@ public:
 	int GetScreenWidth() const { return m_width; }
 	int GetScreenHeight() const { return m_height; }
 	int GetMesResolution() const { return m_meshResolution; }
+	int GetScreenPosition() const { return m_screenPosition; }
+	int GetMeshPosition() const { return m_meshPosition; }
 
 private:
-	int m_width = 100;
+	int m_width = 150;
 	int m_height = 20;
-	int m_meshResolution = 32;
+	int m_meshResolution = 10;
+	int m_screenPosition = 3;
+	int m_meshPosition = 10;
+	char m_screenBackground = '.';
+	char m_screenMeshProjection = 'X';
 };
 
 #endif // !SETTINGS_H
