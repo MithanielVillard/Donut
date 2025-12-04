@@ -35,7 +35,7 @@ void Mesh::GenerateRectangle(float const width, float const height)
     m_vertices.resize(m_meshResolution * m_meshResolution);
     for(int i = 0; i < m_meshResolution; i++)
     {
-        for(int j = 0; j < m_meshResolution / 2.0f; j++)
+        for(int j = 0; j < m_meshResolution - 1; j++)
         {
             m_vertices[m_meshResolution * i + j].x = (1.f*i / (m_meshResolution - 1) - 0.5f) * width;
             m_vertices[m_meshResolution * i + j].y = (1.f*j / (m_meshResolution - 1) - 0.5f) * height;
@@ -54,5 +54,13 @@ void Mesh::PrintMesh()
 	for(Vertex v : m_vertices)
 	{
 		std::cout << "x: " << v.x << " y: " << v.y << " z: " << v.z << "\n";
+	}
+}
+
+void Mesh::Rotate(Axis axis, float angle)
+{
+	for(Vertex& v : m_vertices)
+	{
+		v.Rotate(angle, axis);
 	}
 }

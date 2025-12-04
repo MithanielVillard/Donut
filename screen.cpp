@@ -1,7 +1,6 @@
 #include "screen.h"
 #include "mesh.h"
 #include "settings.h"
-#include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
@@ -39,7 +38,7 @@ void Screen::Display(Mesh& mesh)
 		float screenPosY = (vertex.y * m_screenPosition ) / (vertex.z + m_meshPosition) + m_height / 2.0f;
 
 		int x = static_cast<int>(screenPosX);
-		int y = static_cast<int>(screenPosY);
+		int y = static_cast<int>(screenPosY) / 2.0f;
 		m_pData[y * m_width + x] = 'X';
 	}
 }

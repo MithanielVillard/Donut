@@ -7,12 +7,14 @@ int main(int argc, char** argv)
 	Settings s(argc, argv);
 
 	Mesh mesh(s);
-	mesh.GenereateSquare(30.0f);
+	mesh.GenereateSquare(50.0f);
 	//mesh.PrintMesh();
 
 	Screen screen(s);
 	screen.Clear();
 	screen.HomeCursor();
+
+	mesh.Rotate(Z, 3.1415 / 4.0f);
 	screen.Display(mesh);
 	screen.Display();
 
