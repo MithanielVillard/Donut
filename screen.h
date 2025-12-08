@@ -4,7 +4,7 @@
 #include "mesh.h"
 #include "settings.h"
 
-#define HOME_ESCAPE "\x1B[H"
+#define HOME_ESCAPE "\x1B[1;1H"
 #define CLEAR_ESCAPE "\x1B[2J"
 #define HIDE_ESCAPE "\x1B[?25l"
 #define SHOW_ESCAPE "\x1B[?25h"
@@ -23,6 +23,8 @@ public:
 
 private:
 	char* m_pData;
+	char* m_pZBuffer;
+
 	int m_width = 0;
 	int m_height = 0;
 	int m_screenPosition = 0;

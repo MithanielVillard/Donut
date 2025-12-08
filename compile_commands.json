@@ -1,0 +1,21 @@
+[
+{
+  "directory": "/home/mird/Documents/cshared/Donut",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-DNDEBUG", "-o", "build/.objs/Donut/linux/x86_64/release/mesh.cpp.o", "mesh.cpp"],
+  "file": "mesh.cpp"
+},
+{
+  "directory": "/home/mird/Documents/cshared/Donut",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-DNDEBUG", "-o", "build/.objs/Donut/linux/x86_64/release/screen.cpp.o", "screen.cpp"],
+  "file": "screen.cpp"
+},
+{
+  "directory": "/home/mird/Documents/cshared/Donut",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-DNDEBUG", "-o", "build/.objs/Donut/linux/x86_64/release/settings.cpp.o", "settings.cpp"],
+  "file": "settings.cpp"
+},
+{
+  "directory": "/home/mird/Documents/cshared/Donut",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-DNDEBUG", "-o", "build/.objs/Donut/linux/x86_64/release/donut.cpp.o", "donut.cpp"],
+  "file": "donut.cpp"
+}]

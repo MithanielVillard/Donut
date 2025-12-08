@@ -35,9 +35,9 @@ struct Vertex
 		}
 	}
 
-	float x;
-	float y;
-	float z;
+	float x = 0;
+	float y = 0;
+	float z = 0;
 };
 
 class Mesh
@@ -51,7 +51,8 @@ public:
 	void GenerateCircle(float radius);
 	void GenerateHalfCircle(float radius);
 	void GenerateRectangle(float width, float height);
-	void GenereateSquare(float size);
+	void GenerateSquare(float size);
+	void GenerateTorus(float R1, float R2);
 
 	void Rotate(Axis axis, float angle);
 
