@@ -5,7 +5,7 @@
 
 Settings::Settings(int argc, char ** argv)
 {
-	if (argc < 5) return;
+	//if (argc < 5) return;
 
 	for (int i = 0; i < argc; i++)
 	{
@@ -15,5 +15,7 @@ Settings::Settings(int argc, char ** argv)
 			m_width = std::stoi(argv[i+1]);
 		else if (strcmp(argv[i], "-r") == 0)
 			m_meshResolution = std::stoi(argv[i+1]);
+		else if (strcmp(argv[i], "-p") == 0)
+			m_meshPosition = std::stoi(argv[i+1]);
 	}
 }

@@ -15,9 +15,9 @@ public:
 
 private:
 	int m_width = 150;
-	int m_height = 20;
-	int m_meshResolution = 10;
-	int m_screenPosition = 3;
+	int m_height = 30;
+	int m_meshResolution = 300;
+	float m_screenPosition = 8.3;
 	int m_meshPosition = 10;
 	char m_screenBackground = '.';
 	char m_screenMeshProjection = 'X';

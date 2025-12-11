@@ -7,15 +7,22 @@ int main(int argc, char** argv)
 	Settings s(argc, argv);
 
 	Mesh mesh(s);
-	mesh.GenereateSquare(50.0f);
+	mesh.GenerateTorus(1.9f, 4);
 	//mesh.PrintMesh();
 
 	Screen screen(s);
-	screen.Clear();
-	screen.HomeCursor();
+	screen.SetCursorVisibility(false);
 
-	mesh.Rotate(Z, 3.1415 / 4.0f);
-	screen.Display(mesh);
-	screen.Display();
+	while (true) 
+	{
+		screen.Clear();
+		screen.HomeCursor();
 
+		mesh.Rotate(X, 0.001);
+
+		screen.Display(mesh);
+		screen.Display();
+	}
+
+	screen.SetCursorVisibility(true);
 }
