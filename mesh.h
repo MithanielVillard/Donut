@@ -13,7 +13,7 @@ enum Axis
 struct Vertex
 {
 	Vertex() = default;
-	Vertex(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
+	Vertex(float _x, float _y, float _z, float _nx, float _ny, float _nz) : x(_x), y(_y), z(_z), nx(_nx), ny(_ny), nz(_ny) {}
 
 	void Rotate(float angle, Axis axis)
 	{
@@ -21,16 +21,16 @@ struct Vertex
 		switch(axis)
 		{
 			case X:
-				y = previous.y * std::cos(angle) - previous.z * std::sin(angle); 
-				z = previous.y * std::sin(angle) + previous.z * std::cos(angle);
+				y = ny = previous.y * std::cos(angle) - previous.z * std::sin(angle); 
+				z = nz = previous.y * std::sin(angle) + previous.z * std::cos(angle);
 				break;
 			case Y:
-				x = previous.x * std::cos(angle) + previous.z * std::sin(angle);
-				z = -previous.x * std::sin(angle) + previous.z * std::cos(angle);
+				x = nx = previous.x * std::cos(angle) + previous.z * std::sin(angle);
+				z = nz = -previous.x * std::sin(angle) + previous.z * std::cos(angle);
 				break;
 			case Z:
-				x = previous.x * std::cos(angle) - previous.y * std::sin(angle);
-				y = previous.x * std::sin(angle) + previous.y * std::cos(angle);
+				x = nx = previous.x * std::cos(angle) - previous.y * std::sin(angle);
+				y = ny = previous.x * std::sin(angle) + previous.y * std::cos(angle);
 				break;
 		}
 	}
@@ -38,6 +38,10 @@ struct Vertex
 	float x = 0;
 	float y = 0;
 	float z = 0;
+
+	float nx = 0;
+	float ny = 0;
+	float nz = 0;
 };
 
 class Mesh

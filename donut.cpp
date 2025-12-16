@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 	Settings s(argc, argv);
 
 	Mesh mesh(s);
-	mesh.GenerateTorus(1.9f, 4);
+	mesh.GenerateTorus(1, 2);
 	//mesh.PrintMesh();
 
 	Screen screen(s);

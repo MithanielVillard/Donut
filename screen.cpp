@@ -44,12 +44,17 @@ void Screen::Display(Mesh& mesh)
 
 		int x = static_cast<int>(screenPosX);
 		int y = static_cast<int>(screenPosY) / 2.0f;
+		float ooz = 1.0f/(vertex.z + m_meshPosition);
 
-		//if (x < m_width || x > 0 || y < 0 || y > m_height)
-		//	continue;
-		x = std::clamp(x, 0, m_width);
-		y = std::clamp(y, 0, m_height);
+		if (m_pZBuffer[y * m_width + x] > ooz) 
+			continue;
+
+		if (x > m_width || x < 0 || y < 0 || y > m_height)
+			continue;
+		//x = std::clamp(x, 0, m_width);
+		//y = std::clamp(y, 0, m_height);
 		m_pData[y * m_width + x] = '@';
+		m_pZBuffer[y * m_width + x] = ooz;
 	}
 }
 

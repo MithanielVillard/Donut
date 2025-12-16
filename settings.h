@@ -16,9 +16,9 @@ public:
 private:
 	int m_width = 150;
 	int m_height = 30;
-	int m_meshResolution = 300;
-	float m_screenPosition = 8.3;
-	int m_meshPosition = 10;
+	int m_meshResolution = 500;
+	int m_meshPosition = 5;
+	float m_screenPosition = m_width * m_meshPosition * -1/(8*1+2);
 	char m_screenBackground = '.';
 	char m_screenMeshProjection = 'X';
 };

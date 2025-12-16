@@ -13,7 +13,8 @@ void Mesh::GenerateCircle(float const radius)
 		for (float j = 0; j < m_meshResolution; j++)
 		{
 			float theta = (M_PI * 2 * j) / (m_meshResolution - 1);
-			m_vertices[m_meshResolution * i + j] = {std::cos(theta) * r, std::sin(theta) * r, 0};
+			m_vertices[m_meshResolution * i + j] = 
+			{std::cos(theta) * r, std::sin(theta) * r, 0, std::cos(theta), std::sin(theta), 0.0f};
 		}
 	}
 }
@@ -27,7 +28,7 @@ void Mesh::GenerateHalfCircle(float const radius)
 		for (float j = 0; j < m_meshResolution; j++)
 		{
 			float theta = (M_PI * j) / (m_meshResolution - 1);
-			m_vertices[m_meshResolution * i + j] = {std::cos(theta) * r, std::sin(theta) * r, 0};
+			m_vertices[m_meshResolution * i + j] = {std::cos(theta) * r, std::sin(theta) * r, 0, std::cos(theta), std::sin(theta), 0.0f};
 		}
 	}
 }
@@ -42,6 +43,9 @@ void Mesh::GenerateRectangle(float const width, float const height)
             m_vertices[m_meshResolution * i + j].x = (1.f*i / (m_meshResolution - 1) - 0.5f) * width;
             m_vertices[m_meshResolution * i + j].y = (1.f*j / (m_meshResolution - 1) - 0.5f) * height;
             m_vertices[m_meshResolution * i + j].z = 0.f;
+            m_vertices[m_meshResolution * i + j].nx = 0.0f;
+            m_vertices[m_meshResolution * i + j].ny = 0.0f;
+            m_vertices[m_meshResolution * i + j].nz = 1.0f;
         }
     }
 }
@@ -76,7 +80,8 @@ void Mesh::GenerateTorus(float R1, float R2)
 		for (float j = 0; j < m_meshResolution; j++)
 		{
 			float theta = (M_PI * 2 * j) / (m_meshResolution - 1);
-			m_vertices[m_meshResolution * seg + j] = {R2 + std::cos(theta) * R1, std::sin(theta) * R1, 0.0f};
+			float totalR = R1 + R2;
+			m_vertices[m_meshResolution * seg + j] = {(R2 + std::cos(theta) * R1) - 0.5f, (std::sin(theta) * R1) - 0.5f, 0.0f, std::cos(theta), std::sin(theta), 0.0f};
 			m_vertices[m_meshResolution * seg + j].Rotate(angle * seg, Y);
 		}
 	}
